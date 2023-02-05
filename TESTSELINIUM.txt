@@ -1,0 +1,225 @@
+//////////// LOGIN TEST //////////////
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Login Successfull");
+        }else {
+        	System.out.println("Login Failed");
+        }
+        		
+
+	}
+
+}
+
+//////////// REGISTRATION TEST //////////////
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/registration");
+        
+        //Find user name
+        
+        driver.findElement(By.id("Renter")).click();
+        
+        driver.findElement(By.name("first_name")).sendKeys("S.M Shahriar");
+        
+        driver.findElement(By.name("last_name")).sendKeys("Showrov");
+        
+        driver.findElement(By.name("username")).sendKeys("Snake");
+        
+        driver.findElement(By.name("email")).sendKeys("showrov@gmail.com");
+       
+        
+        WebElement dateBox = driver.findElement(By.xpath("//form//input[@name='Date_of_birth']"));
+
+        
+
+        dateBox.sendKeys("092");
+
+        
+
+        dateBox.sendKeys(Keys.TAB);
+
+        
+
+        dateBox.sendKeys("2000");
+       
+        
+        
+        driver.findElement(By.id("male")).click();
+        
+        driver.findElement(By.name("phone_number")).sendKeys("017894656624");
+        
+        driver.findElement(By.name("address")).sendKeys("Niketan, Gulshan");
+        
+        driver.findElement(By.name("nid_number")).sendKeys("1513307312");
+        
+        driver.findElement(By.name("dl_number")).sendKeys("A01932387");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        WebElement browse = driver.findElement(By.xpath("//input[@id='pp']"));
+        
+        browse.sendKeys("C:\\Users\\User\\Desktop\\call-of-duty-modern-warfare-2-double-xp-tokens.jpg");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        
+        
+        String expected_title = "Custom Authentication";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Registration Successfull");
+        }else {
+        	System.out.println("Registration Failed");
+        }
+        		
+
+	}
+
+}
+
+
+
+////////////////// CAR ADD TEST ///////////////
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        //Add car
+        driver.get("http://127.0.0.1:8000/addNewCar");
+        
+        driver.findElement(By.name("car_name")).sendKeys("Subaru");
+        driver.findElement(By.name("car_model")).sendKeys("B3");
+        driver.findElement(By.id("Family")).click();
+        driver.findElement(By.name("car_number")).sendKeys("1525646");
+        driver.findElement(By.name("rent_price")).sendKeys("3500");
+        
+
+        WebElement dateBox = driver.findElement(By.xpath("//form//input[@name='car_buy_date']"));
+
+        
+
+        dateBox.sendKeys("2912");
+
+        
+
+        dateBox.sendKeys(Keys.TAB);
+
+        
+        dateBox.sendKeys("2010");
+        
+        
+        WebElement t=driver.findElement(By.xpath("//*[@name='car_color']"));
+        
+        Select select = new Select(t);
+        
+        select.selectByVisibleText("Blue");
+        
+        WebElement t1=driver.findElement(By.xpath("//*[@name='sit_number']"));
+        
+        Select select1 = new Select(t1);
+        
+        select1.selectByVisibleText("2");
+        
+        WebElement m = driver.findElement(By.id("car_details"));
+        // enter text
+        m.sendKeys("Best");
+        
+        WebElement browse = driver.findElement(By.xpath("//input[@id='carpic']"));
+        
+        browse.sendKeys("C:\\Users\\User\\Desktop\\subaru.jpg");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Success");
+        }else {
+        	System.out.println("Failed");
+        }
+        		
+
+	}
+
+}
+
+////////////
