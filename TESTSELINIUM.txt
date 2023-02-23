@@ -222,4 +222,208 @@ public class myclass {
 
 }
 
-////////////
+//////////// Carlist Test ///////////////////////////
+
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        //Add car
+        driver.get("http://127.0.0.1:8000/carlist");
+        
+                
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Success");
+        }else {
+        	System.out.println("Failed");
+        }
+        		
+
+	}
+
+}
+
+/////////////////////// Video Upload/////////////////////
+
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        //Add car
+        driver.get("http://127.0.0.1:8000/postCarVideo");
+        
+        WebElement browse = driver.findElement(By.xpath("//input[@name='video']"));
+        
+        browse.sendKeys("C:\\Users\\User\\Desktop\\VID_20200930124630.mp4");
+        
+        driver.findElement(By.className("btn-primary")).click();     
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Success");
+        }else {
+        	System.out.println("Failed");
+        }
+        		
+
+	}
+
+}
+
+
+/////////////////////video list ////////////////
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        //Add car
+        driver.get("http://127.0.0.1:8000/video_list");
+             
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Success");
+        }else {
+        	System.out.println("Failed");
+        }
+        		
+
+	}
+
+}
+
+
+///////////////Notice /////////////////
+
+package SeleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+
+
+public class myclass {
+    
+	@Test
+	public void t_01_validate_login_crms_app() {
+		
+		System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://127.0.0.1:8000/login");
+        
+        //Find user name
+        driver.findElement(By.name("email")).sendKeys("mansibahsan9@gmail.com");
+        
+        //Password is set
+        driver.findElement(By.name("password")).sendKeys("123456");
+        
+        driver.findElement(By.className("btn-primary")).click();
+        //Add car
+        driver.get("http://127.0.0.1:8000/notices");
+             
+        
+        String expected_title = "CRMS- Dashboard";
+        String actual_title = driver.getTitle();
+        
+        //Check point
+        if (expected_title.equals(actual_title)) {
+        	System.out.println("Success");
+        }else {
+        	System.out.println("Failed");
+        }
+        		
+
+	}
+
+}
